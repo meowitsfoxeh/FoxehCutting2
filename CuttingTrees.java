@@ -14,7 +14,7 @@ public class CuttingTrees extends Node {
 	@Override
 	public boolean activate() {
 		SceneObject tree = SceneEntities.getNearest(Main.mytree.getTreeID());
-		return !Inventory.isFull() && tree !=null && tree.getLocation ().distanceTo() < 5;
+		return !Inventory.isFull() && tree !=null && tree.getLocation ().distanceTo() < 5 && !Players.getLocal().isMoving();
 	}
 
 	@Override

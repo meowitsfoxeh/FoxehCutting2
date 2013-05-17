@@ -6,8 +6,8 @@ import org.powerbot.game.api.wrappers.map.TilePath;
 public enum Trees {
 
 	MAPLE(1517, Constants.SEERS_MAPLE_PATH, new Tile(2726,3500,0), new Tile(2725, 3492, 0), 51843),
-    WILLOW(1519, Constants.DRAYNOR_WILLOW_PATH, new Tile (3087,3234,0), new Tile(3092, 3243, 0), 38627, 38616, 58006),
-	YEW(1515, Constants.SEERS_YEW_PATH, new Tile (2709,3460,0), new Tile(2724, 3489, 0), 38755);
+    WILLOW(1519, Constants.DRAYNOR_WILLOW_PATH, new Tile (3089, 3231, 0), new Tile(3092, 3243, 0), 38627, 38616, 58006),
+	YEW(1515, Constants.SEERS_YEW_PATH, new Tile (2708,3463,0), new Tile(2724, 3489, 0), 38755);
 	private int logID;
 	private Tile [] path;
 	private int[] treeID;

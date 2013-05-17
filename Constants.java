@@ -22,6 +22,7 @@ public class Constants {
 	};
 	
 	public final static Tile[] DRAYNOR_WILLOW_PATH = {   
+		new Tile(3086, 3239 ,0),
 		new Tile(3092, 3243, 0), 
 	};
 	
