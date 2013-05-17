@@ -14,13 +14,13 @@ public class CuttingTrees extends Node {
 	@Override
 	public boolean activate() {
 		SceneObject tree = SceneEntities.getNearest(Main.mytree.getTreeID());
-		return !Inventory.isFull() && tree !=null && tree.getLocation ().distanceTo() < 5 && !Players.getLocal().isMoving();
+		return !Inventory.isFull() && tree !=null && tree.getLocation ().isOnMap() && !Players.getLocal().isMoving();
 	}
 
 	@Override
 	public void execute() {
 		SceneObject tree = SceneEntities.getNearest(Main.mytree.getTreeID());
-		if (Players.getLocal().getAnimation()==-1) {
+		if (Players.getLocal().getAnimation()==-1 && tree.isOnScreen()) {
 			if (tree.isOnScreen()) {
 				tree.interact ("chop");
 				final Timer wc = new Timer (2000);
@@ -33,6 +33,8 @@ public class CuttingTrees extends Node {
 				Camera.turnTo(tree);
 			}
 
+		} else {
+			Camera.turnTo(tree);
 		}
 	}
 }

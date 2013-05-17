@@ -8,13 +8,11 @@ public class WalkingToTrees extends Node {
 
 	@Override
 	public boolean activate() {
-		 int dist = Main.mytree == Trees.WILLOW ? 10 : 5;
-		return Main.mytree.getTreeTile().getLocation ().distanceTo() > dist && !Inventory.isFull() && !Players.getLocal().isMoving();
+		return Main.mytree.getTreeTile().getLocation ().distanceTo() > 12 && !Inventory.isFull() && !Players.getLocal().isMoving();
 	}
 
 	@Override
 	public void execute() {
 		Main.mytree.gettreePath().traverse();
-
 	}
 }
