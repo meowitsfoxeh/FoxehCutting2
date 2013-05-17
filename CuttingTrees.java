@@ -4,6 +4,7 @@ import org.powerbot.core.script.job.Task;
 import org.powerbot.core.script.job.state.Node;
 import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
+import org.powerbot.game.api.methods.tab.Inventory;
 import org.powerbot.game.api.methods.widget.Camera;
 import org.powerbot.game.api.util.Timer;
 import org.powerbot.game.api.wrappers.node.SceneObject;
@@ -13,7 +14,7 @@ public class CuttingTrees extends Node {
 	@Override
 	public boolean activate() {
 		SceneObject tree = SceneEntities.getNearest(Main.mytree.getTreeID());
-		return tree !=null && tree.getLocation ().distanceTo() < 5;
+		return !Inventory.isFull() && tree !=null && tree.getLocation ().distanceTo() < 5;
 	}
 
 	@Override
